@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang = "en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <title>Add Item</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/common.css}" >
+</head>
+
+<body>
+<div class="navbar">
+    <div class="nav-container">
+        <div class="nav-item">
+            <a th:href="@{/}"> Home </a>
+            <a  href="/items/list"
+                sec:authorize="hasRole('ROLE_ADMIN')">Items list</a>
+        </div>
+        <div>
+            <form th:action="@{/logout}"
+                  method = "POST">
+                <input type = "submit" class="btn btn-danger btns-a" style="border-radius: 0px;" value = "Logout" />
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="mainContainer">
+        <h3>Save Item</h3>
+        <hr>
+        <!--        <div class="dropdown-menu">-->
+        <form action="#" th:action = "@{/items/save}"
+              th:object="${item}" method="POST" class="px-4 py-3">
+
+            <!-- Add hidden form field for update -->
+            <!--        <div class="form-group">-->
+            <input type="hidden" th:field="*{id}"/>
+            <!--        </div>-->
+
+            <!--        <div class="form-group">-->
+            <input type="text" th:field="*{name}" placeholder="Item Name"
+                   class="form-control mb-4 col-4">
+            <p class="alert alert-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+
+            <!--        </div>-->
+
+            <!--        <div class="form-group">-->
+            <input type="number" th:field="*{price}" placeholder="Price"
+                   class="form-control mb-4 col-4">
+            <p class="alert alert-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}" />
+
+            <!--        </div>-->
+
+            <button type="submit" class="btn btn-info btns-a col-2">Save</button>
+        </form>
+        <!--        </div>-->
+    </div>
+</div>
+</body>
+</html>
