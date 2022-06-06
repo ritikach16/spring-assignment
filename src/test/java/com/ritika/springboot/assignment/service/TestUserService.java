@@ -23,11 +23,11 @@ class TestUserService {
     private UserRepository userRepository;
 
     @Test
-    public void save(){
-        User user = new User("avinash","test123");
+     void save(){
+        User user = new User("ritika","test123");
         userService.save(user);
         when(userRepository.save(user)).thenReturn(user);
-        User returnUser = new User("avinash","test123");
+        User returnUser = new User("ritika","test123");
         assertEquals(user, returnUser);
     }
 }

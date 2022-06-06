@@ -26,7 +26,7 @@ class TestCustomerService {
     private CustomerRepository customerRepository;
 
     @Test
-    public void findAll(){
+     void findAll(){
         when(customerRepository.findAll()).thenReturn(Stream.of(new Customer(1,"ritika","chauhan","ritika.chauhan@gmail.com"),
                 new Customer(2,"marie","lee","marie.lee@gmail.com"),
                 new Customer(3,"jay","bam","jay.bam@gmail.com"))
