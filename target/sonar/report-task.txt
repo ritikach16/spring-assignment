@@ -1,0 +1,7 @@
+organization=spring-assign
+projectKey=com.springboot.assignment:assignment
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.29453
+dashboardUrl=https://sonarcloud.io/dashboard?id=com.springboot.assignment%3Aassignment
+ceTaskId=AYE5UW6eWBYaP48rrfO5
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AYE5UW6eWBYaP48rrfO5

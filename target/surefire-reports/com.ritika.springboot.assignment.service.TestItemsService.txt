@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.ritika.springboot.assignment.service.TestItemsService
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.337 s - in com.ritika.springboot.assignment.service.TestItemsService

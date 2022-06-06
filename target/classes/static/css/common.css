@@ -1,0 +1,39 @@
+.mainContainer{
+                margin-top: 50px;
+                padding: 10px;
+        }
+.navbar{
+            height: 80px;
+            background-color: #A5BECC;
+            display: flex;
+            justify-content: center;
+        }
+.nav-item{
+           margin: 10px;
+        }
+ .nav-item a{
+            text-decoration: none;
+            color: black;
+            margin: 10px;
+            height: 40px;
+            background-color: #eee;
+            padding: 10px;
+        }
+ .nav-container{
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+        }
+
+ .btns-a{
+         text-decoration: none;
+                    color: black;
+                    margin: 5px;
+                    height: 40px;
+                    border-radius: 0px;
+        }
+
+ .btns-a:hover{color: white;}
+ .error{
+    color: red;
+ }

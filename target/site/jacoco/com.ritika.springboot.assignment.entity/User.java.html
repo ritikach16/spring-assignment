@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>User.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">assignment</a> &gt; <a href="index.source.html" class="el_package">com.ritika.springboot.assignment.entity</a> &gt; <span class="el_source">User.java</span></div><h1>User.java</h1><pre class="source lang-java linenums">package com.ritika.springboot.assignment.entity;
+
+import lombok.Data;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.List;
+
+@Entity
+@Table(name =  &quot;users&quot;)
+<span class="pc bpc" id="L11" title="22 of 32 branches missed.">public @Data class User {</span>
+    @Id
+    @Column(name = &quot;username&quot;)
+<span class="fc" id="L14">    private String username;</span>
+
+    @NotNull(message = &quot;is Required&quot;)
+    @Column(name = &quot;password&quot;)
+<span class="fc" id="L18">    private String password;</span>
+
+<span class="fc" id="L20">    @Column(name = &quot;enabled&quot;)</span>
+<span class="fc" id="L21">    private int enabled = 1;</span>
+
+    @OneToMany(mappedBy = &quot;user&quot;,
+            cascade = { CascadeType.MERGE,CascadeType.DETACH,CascadeType.PERSIST,CascadeType.REFRESH})
+<span class="fc" id="L25">    private List&lt;Authority&gt; authorities;</span>
+
+<span class="fc" id="L27">    public User() {</span>
+
+<span class="fc" id="L29">    }</span>
+<span class="fc" id="L30">    public User(String username, String password) {</span>
+<span class="fc" id="L31">        this.username = username;</span>
+<span class="fc" id="L32">        this.password = password;</span>
+<span class="fc" id="L33">    }</span>
+
+    @Override
+    public String toString() {
+<span class="nc" id="L37">        return &quot;User{&quot; +</span>
+                &quot;username='&quot; + username + '\'' +
+                &quot;, password='&quot; + password + '\'' +
+                &quot;, enabled=&quot; + enabled +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
